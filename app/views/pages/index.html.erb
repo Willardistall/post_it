@@ -3,6 +3,8 @@
 <% @postits.each do |postit| %>
   <h2><%= postit.title %></h2>
   <%= link_to 'Show Note', postit_path(postit) %>
+  <%= link_to 'Edit Note', postit_path(postit) %>
+  <%= link_to 'Destroy Note', postit, method: :delete %>
 <% end %>
 
 

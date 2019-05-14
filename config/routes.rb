@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'pages/index'
-  get 'pages/show'
-  get 'pages/new'
+  root 'static_postits#home'
+
+  get '/about', to: 'static_postits#about'
+  resources :postits
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -13,7 +13,7 @@ class PostItController < ApplicationController
   end
 
   def create 
-    @postit = Postit.new(postits_params)
+    @postit = PostIt.new(postits_params)
       if @postit.save
         redirect_to postit_path
       else
@@ -21,6 +21,18 @@ class PostItController < ApplicationController
       end
   end
 
+  def edit
+    @postit = PostIt.find(params[:id])
+    if @postit.update(postits_params)
+      redirect_to postit_path
+    else
+      render :edit
+    end
+  def destroy
+      PostIt.find(params[:id]).destroy
+      redirect_to postit_path
+  end
+    
 end
 
 private
