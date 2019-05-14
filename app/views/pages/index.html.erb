@@ -1,0 +1,8 @@
+<h1>Post It</h1>
+<p><%= link_to 'New Postit', new_postit_path %></p>
+<% @postits.each do |postit| %>
+  <h2><%= postit.title %></h2>
+  <%= link_to 'Show Note', postit_path(postit) %>
+<% end %>
+
+
